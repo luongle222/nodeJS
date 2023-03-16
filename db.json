@@ -1,9 +1,13 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "name": "Lương"
-        }
-    ],
-    "user": []
+  "products": [
+    {
+      "id": "1",
+      "name": "Lương"
+    },
+    {
+      "name": "Lê",
+      "id": "P2OG8Kd"
+    }
+  ],
+  "user": []
 }
