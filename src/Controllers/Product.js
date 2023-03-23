@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import axios from "axios";
 import joi from "joi";
-import Product from "../models/Product.js";
+import Product from "../models/Products.js";
 
 dotenv.config();
 

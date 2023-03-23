@@ -2,7 +2,8 @@
   "products": [
     {
       "id": "1",
-      "name": "Lương"
+      "name": "Lương",
+      "price": "200"
     },
     {
       "name": "Lê",
