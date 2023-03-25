@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import axios from "axios";
 import joi from "joi";
-import Product from "../models/Products.js";
+import Products from "../models/Products.js";
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ const productSchema = joi.object({
 export const getAll = async (req, res) => {
     try {
         // const { data: products } = await axios.get(`${process.env.API_URL}/products`);
-        const products = await Product.find();
+        const products = await Products.find();
         console.log(products);
         if (products.length === 0) {
             return res.status(404).json({

@@ -1,5 +1,7 @@
 
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken"
+
 
 import User from "../models/Auth.js"
 import { signupSchema } from "../Schema/Auth.js";
@@ -37,6 +39,7 @@ export const signup = async (req, res) => {
 
         return res.status(201).json({
             message: "Đăng kí thành công",
+            accessToken: token,
             user,
         })
     } catch (error) {
