@@ -37,7 +37,7 @@ export const get = async (req, res) => {
         // const { data: product } = await axios.get(
         //     `${process.env.API_URL}/products/${req.params.id}`
         // );
-        const product = await Product.findById(req.params.id);
+        const product = await Products.findById(req.params.id);
         if (!product) {
             return res.json({
                 message: "Không tìm thấy sản phẩm",
@@ -63,7 +63,7 @@ export const create = async (req, res) => {
             });
         }
         // const { data: product } = await axios.post(`${process.env.API_URL}/products`, req.body);
-        const product = await Product.create(req.body);
+        const product = await Products.create(req.body);
         if (!product) {
             return res.json({
                 message: "Thêm sản phẩm không thành công",
@@ -85,7 +85,7 @@ export const update = async (req, res) => {
         //     `${process.env.API_URL}/products/${req.params.id}`,
         //     req.body
         // );
-        const product = await Product.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        const product = await Products.findOneAndUpdate({ _id: req.params.id }, req.body, {
             new: true,
         });
         if (!product) {
@@ -113,7 +113,7 @@ export const remove = async (req, res) => {
         //         message: "Xóa sản phẩm không thành công",
         //     });
         // }
-        const product = await Product.findByIdAndDelete(req.params.id);
+        const product = await Products.findByIdAndDelete(req.params.id);
         return res.json({
             message: "Xóa sản phẩm thành công",
             product,
