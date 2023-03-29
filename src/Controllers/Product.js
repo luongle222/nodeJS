@@ -63,7 +63,7 @@ export const create = async (req, res) => {
             });
         }
         // const { data: product } = await axios.post(`${process.env.API_URL}/products`, req.body);
-        const product = await Products.create(req.body);
+        const product = await Products.post(req.body);
         if (!product) {
             return res.json({
                 message: "Thêm sản phẩm không thành công",
