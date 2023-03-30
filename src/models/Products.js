@@ -1,4 +1,6 @@
+import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
+
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -6,8 +8,15 @@ const productSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-    }
+    },
+    category: {
+        type: ObjectId,
+        ref: "Category",
+        require: true,
+    },
 
-})
+},
+    { timestamps: true, versionKey: false }
+)
 
-export default mongoose.model("Products", productSchema)
+export default mongoose.model("products", productSchema)

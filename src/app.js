@@ -4,8 +4,10 @@ import productRouter from "./Router/Products.js";
 import authRouter from "./Router/Auth.js";
 import mongoose from "mongoose";
 
+
 dotenv.config();
 const app = express();
+
 
 //đăng kí middleware
 app.use(express.json());
