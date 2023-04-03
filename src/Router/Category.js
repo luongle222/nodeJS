@@ -1,6 +1,6 @@
 import express from "express";
 
-import { create, get } from "../controllers/category";
+import { get, create } from "../Controllers/category"
 
 const router = express.Router();
 router.get("/categories/:id", get);
