@@ -66,7 +66,7 @@ export const signin = async (req, res) => {
             });
         }
         // nó vừa mã hóa và vừa so sánh
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({
                 message: "Sai mật khẩu",

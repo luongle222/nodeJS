@@ -36,7 +36,7 @@ export const create = async (req, res) => {
                 message: error.details[0].message,
             })
         }
-        const category = await Category.create(req.body);
+        const category = await category.create(req.body);
         if (!category) {
             return res.json({
                 message: "Thêm danh mục không thành công",

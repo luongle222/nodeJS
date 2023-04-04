@@ -14,7 +14,7 @@ export const checkPermission = async (req, res, next) => {
 
         const { _id } = jwt.verify(token, process.env.SECRET_KEY);
 
-        const user = await User.findById(_id);
+        const user = await user.findById(_id);
         if (!user) {
             return res.status(401).json({
                 message: "Unauthorized",
