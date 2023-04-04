@@ -15,9 +15,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-app.use("/api", productRouter);
-app.use("/api", categoryRouter);
-app.use("/api", authRouter);
+app.use(productRouter);
+app.use(categoryRouter);
+app.use(authRouter);
 
 mongoose.connect("mongodb://127.0.0.1:27017/we17302");
 
