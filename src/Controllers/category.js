@@ -9,6 +9,25 @@ const categorySchema = joi.object({
     name: joi.string().required(),
 })
 
+export const getAll = async (req, res) => {
+    try {
+        const categories = await category.find({});
+        if (!categories) {
+            return res.json({
+                message: "Không tìm thấy sản phẩm",
+            });
+        }
+        return res.json({
+            message: "Lấy sản phẩm thành công",
+            categories,
+        });
+    } catch (error) {
+        return res.status(400).json({
+            message: error,
+        });
+    }
+};
+
 export const get = async (req, res) => {
     try {
         const product = await Products.findById(req.params.id).populate("products");

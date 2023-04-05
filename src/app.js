@@ -11,12 +11,12 @@ dotenv.config();
 const app = express();
 
 
-//đăng kí middleware
+// đăng ký middleware" giải mã dữ liệu json
 app.use(express.json());
-app.use(cors())
-
-app.use(productRouter);
-app.use(categoryRouter);
+app.use(cors());
+// router
+app.use("/api", productRouter);
+app.use("/api", categoryRouter);
 app.use("/api", authRouter);
 
 mongoose.connect("mongodb://127.0.0.1:27017/we17302");

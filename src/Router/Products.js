@@ -4,10 +4,10 @@ import { checkPermission } from "../middlewares/checkMiddlewares.js";
 
 
 const router = express.Router();
-router.get("/api/products", getAll);
-router.get("/api/products/:id", get);
-router.post("/api/products", create);
-router.put("/api/products/:id", checkPermission, update);
-router.delete("/api/products/:id", checkPermission, remove);
+router.get("/products", getAll);
+router.get("/products/:id", get);
+router.post("/products", checkPermission, create);
+router.put("/products/:id", checkPermission, update);
+router.delete("/products/:id", checkPermission, remove);
 
 export default router;

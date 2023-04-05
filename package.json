@@ -24,7 +24,8 @@
     "json-server-auth": "^2.1.0",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.1.0",
-    "mongoose": "^7.0.2"
+    "mongoose": "^7.0.2",
+    "mongoose-paginate-v2": "^1.7.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

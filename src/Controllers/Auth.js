@@ -38,7 +38,7 @@ export const signup = async (req, res) => {
             password: hashedPassword,
         });
         user.password = undefined;
-
+        const token = jwt.sign({ _id: user._id }, process.env.SECRET_KEY, { expiresIn: 60 * 60 });
         return res.status(201).json({
             message: "Đăng kí thành công",
             accessToken: token,
