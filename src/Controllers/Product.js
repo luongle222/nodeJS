@@ -5,11 +5,6 @@ import category from "../models/category.js";
 
 dotenv.config();
 
-const productSchema = joi.object({
-    name: joi.string().required(),
-    price: joi.number().required(),
-    description: joi.string(),
-});
 
 export const getAll = async (req, res) => {
     const { _limit = 10, _sort = "createAt", _order = "asc" } = req.query;
