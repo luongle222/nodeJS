@@ -11,7 +11,7 @@ const categorySchema = joi.object({
 
 export const get = async (req, res) => {
     try {
-        const product = await Products.findById(req.params.id);
+        const product = await Products.findById(req.params.id).populate("products");
         if (!product) {
             return res.json({
                 message: "không tìm thấy sản phẩm",
