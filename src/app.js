@@ -17,7 +17,7 @@ app.use(cors())
 
 app.use(productRouter);
 app.use(categoryRouter);
-app.use(authRouter);
+app.use("/api", authRouter);
 
 mongoose.connect("mongodb://127.0.0.1:27017/we17302");
 
